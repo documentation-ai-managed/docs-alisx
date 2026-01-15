@@ -1,0 +1,130 @@
+{
+  "name": "Alisx",
+  "initialRoute": "introduction",
+  "colors": {
+    "light": {
+      "brand": "#e12829"
+    },
+    "dark": {
+      "brand": "#e95e5f"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "icon": "book",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "icon": "rocket",
+            "pages": [
+              {
+                "title": "Introduction",
+                "path": "introduction",
+                "icon": "home"
+              },
+              {
+                "title": "Quickstart",
+                "path": "quickstart",
+                "icon": "zap"
+              }
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "icon": "layers",
+            "pages": [
+              {
+                "title": "Concepts",
+                "path": "concepts",
+                "icon": "file-text"
+              },
+              {
+                "title": "Features",
+                "path": "features",
+                "icon": "grid"
+              }
+            ]
+          },
+          {
+            "group": "Guides",
+            "icon": "compass",
+            "pages": [
+              {
+                "title": "Authentication",
+                "path": "authentication",
+                "icon": "lock"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "API Reference",
+        "icon": "code",
+        "groups": [
+          {
+            "group": "Endpoints",
+            "openapi": "openapi.yaml"
+          }
+        ]
+      },
+      {
+        "tab": "Help Center",
+        "icon": "help-circle",
+        "pages": [
+          {
+            "title": "Help Center",
+            "path": "help-center",
+            "icon": "home"
+          },
+          {
+            "group": "FAQs",
+            "icon": "help-circle",
+            "expandable": false,
+            "pages": [
+              {
+                "title": "Getting Started with AlisX",
+                "path": "help-center/faq/getting-started-with-alisx"
+              }
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "icon": "alert-triangle",
+            "expandable": false,
+            "pages": [
+              {
+                "title": "Login Issues",
+                "path": "help-center/troubleshooting/login-issues"
+              }
+            ]
+          },
+          {
+            "group": "Guides",
+            "icon": "book-open",
+            "expandable": false,
+            "pages": [
+              {
+                "title": "Deploy First AI Model",
+                "path": "help-center/guides/deploy-first-ai-model"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Changelog",
+        "icon": "clock",
+        "pages": [
+          {
+            "title": "Release History",
+            "path": "changelog",
+            "icon": "history"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+---
+title: Quickstart Guide
+description: Get up and running with AlisX in minutes: set up your account, create your first project, and launch a basic application.
+---
+
+## Prerequisites
+
+Before starting, ensure you have the following:
+
+<Callout kind="info">
+- A modern web browser (Chrome, Firefox, or Safari)
+- An active email address for account verification
+- Node.js `{version >= 18}` installed (for local development)
+</Callout>
+
+## Sign Up and Log In
+
+Create your AlisX account to access the platform.
+
+<Steps>
+  <Step title="Visit the Dashboard" icon="monitor">
+    Navigate to [https://app.alisx.com](https://app.alisx.com) and click **Sign Up**.
+  </Step>
+
+  <Step title="Register Account" icon="user-plus">
+    Enter your email, create a password, and verify your account via the email link.
+  </Step>
+
+  <Step title="Log In" icon="log-in">
+    Return to the dashboard and sign in with your credentials.
+  </Step>
+</Steps>
+
+## Create Your First Project
+
+Once logged in, start a new project using the dashboard.
+
+<Steps>
+  <Step title="New Project" icon="plus">
+    Click **New Project** in the top-right corner.
+  </Step>
+
+  <Step title="Configure Basics" icon="settings">
+    Enter a project name like `my-first-app`, select **AI-Native Web App** as the template, and choose your preferred stack (React or Next.js).
+  </Step>
+
+  <Step title="Complete Wizard" icon="sparkles">
+    Follow the initial setup wizard:
+    
+    1. Define your app's core functionality (e.g., "Task management dashboard").
+    2. Enable AI code generation.
+    3. Review and confirm settings.
+  </Step>
+</Steps>
+
+## Deploy Your Application
+
+Deploy your project with one click.
+
+<Tabs>
+  <Tab title="Dashboard Deploy" icon="upload-cloud">
+    In your project dashboard:
+    
+    <Steps>
+      <Step title="Build & Deploy">
+        Click **Deploy** > **Production**. AlisX handles building, optimization, and hosting.
+      </Step>
+      
+      <Step title="Custom Domain" default-open="false">
+        Add your domain in **Settings > Domains** and verify DNS.
+      </Step>
+    </Steps>
+  </Tab>
+  
+  <Tab title="CLI Deploy" icon="terminal">
+    Install the AlisX CLI first:
+    
+    <CodeGroup tabs="npm,yarn">
+    ````bash
+    npm install -g @alisx/cli
+    ````
+    
+    ````bash
+    yarn global add @alisx/cli
+    ````
+    </CodeGroup>
+    
+    Then deploy:
+    
+    ````bash
+    alisx login
+    alisx deploy
+    ````
+  </Tab>
+</Tabs>
+
+Your app deploys to a unique URL like `https://my-first-app.alisx.app`.
+
+## Activate Basic AI Features
+
+Enhance your app with AI capabilities.
+
+<Columns cols={2}>
+  <Card title="AI Code Gen" icon="sparkles" href="#ai-code">
+    Enable auto-generated components based on natural language prompts.
+  </Card>
+  
+  <Card title="Smart Testing" icon="check-circle" href="#smart-test">
+    Activate AI-driven unit tests for your codebase.
+  </Card>
+</Columns>
+
+<Expandable title="How to Activate" default-open="true">
+  Go to **Project Settings > AI Features**:
+  
+  1. Toggle **AI Code Generation** on.
+  2. Set prompt: "Generate a user login form with validation".
+  3. Click **Generate** and review changes.
+  
+  Commit via Git integration for persistence.
+</Expandable>
+
+<Callout kind="tip">
+  Monitor deployments in the **Activity** tab. Your first AI feature unlocks premium trial credits.
+</Callout>
+
+## Next Steps
+
+<Card title="Authentication" icon="lock" href="/authentication">
+  Secure your app with robust auth flows.
+</Card>
+
+<Columns cols={2}>
+  <Card title="Advanced AI" icon="brain" href="/guides/ai-features">
+    Dive into custom AI models and integrations.
+  </Card>
+  
+  <Card title="API Reference" icon="code" href="/api-reference">
+    Integrate AlisX APIs into your workflows.
+  </Card>
+</Columns>

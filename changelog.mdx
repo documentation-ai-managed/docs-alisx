@@ -1,0 +1,136 @@
+---
+title: Changelog
+description: Track the latest updates, new features, and improvements in AlisX to stay informed about platform enhancements.
+---
+
+## Recent Releases
+
+Keep your AlisX projects current by reviewing these release notes. You receive notifications for updates through the dashboard at `https://dashboard.example.com`. Each release includes new AI capabilities, performance boosts, and fixes to ensure smooth development workflows.
+
+<Update label="2024-10-15" description="v1.3.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Introduce AI-assisted deployment previews: Generate and test deployment previews directly from your idea stage using the new `{deployPreview()}` API.
+- Add real-time collaboration for strategy teams: Multiple users now edit project roadmaps simultaneously with conflict resolution.
+
+## Improvements
+
+- Enhance AI model inference speed by `>30%` for code generation tasks.
+- Optimize dashboard loading times with lazy-loaded components.
+
+## Bug Fixes
+
+- Resolve intermittent failures in webhook integrations.
+- Fix validation errors when importing legacy project configs.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.2.0" tags={["feature", "bugfix"]}>
+
+## New Features
+
+- Launch integrated AI code reviewer: Automatically scan pull requests and suggest optimizations via `https://api.example.com/v1/review`.
+- Support for custom AI model integrations in the pipeline.
+
+## Breaking Changes
+
+The `{projectId}` parameter now requires a UUID format. Update your integrations:
+
+<Steps>
+  <Step title="Update Client Code" icon="code">
+````javascript
+// Old
+const project = await alisx.getProject('proj-123');
+
+// New - use UUID
+const project = await alisx.getProject('550e8400-e29b-41d4-a716-446655440000');
+````
+  </Step>
+  <Step title="Migrate Existing Projects" icon="settings">
+    Run the migration command in your CLI:
+````bash
+alisx migrate-projects --api-key=YOUR_API_KEY
+````
+  </Step>
+</Steps>
+
+## Bug Fixes
+
+- Patch security vulnerability in token refresh logic (CVE-2024-XXXX).
+- Stabilize AI prompt engineering for edge cases.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["feature", "breaking"]}>
+
+## New Features
+
+- Embed AI-native analytics dashboard: Track deployment metrics and AI model performance in real-time.
+- Introduce webhook support for deployment events at `https://your-webhook-url.com/webhook`.
+
+## Improvements
+
+- Reduce cold start times for serverless functions by `50%`.
+
+## Bug Fixes
+
+- Correct dashboard refresh loops during high-load scenarios.
+
+<CodeGroup tabs="JavaScript,Python">
+````javascript
+// Webhook handler example
+app.post('/webhook', (req, res) => {
+  const event = req.body.event; // e.g., 'deployment.success'
+  console.log(`Handled ${event}`);
+  res.status(200).send('OK');
+});
+````
+
+````python
+# Webhook handler example
+from flask import Flask, request
+
+app = Flask(__name__)
+
+@app.route('/webhook', methods=['POST'])
+def webhook():
+    event = request.json['event']  # e.g., 'deployment.success'
+    print(f"Handled {event}")
+    return 'OK', 200
+````
+</CodeGroup>
+
+</Update>
+
+## Upcoming Roadmap
+
+Discover what's next for AlisX. You can vote on features in the community forum.
+
+<Columns cols={3}>
+  <Card title="Q4 2024: Advanced AI" icon="zap" href="https://dashboard.example.com/roadmap">
+    Multi-agent AI workflows and zero-config model fine-tuning.
+  </Card>
+  <Card title="Q1 2025: Enterprise" icon="shield" href="https://dashboard.example.com/roadmap">
+    SOC 2 compliance, role-based access, and on-prem deployments.
+  </Card>
+  <Card title="Q2 2025: Integrations" icon="github" href="https://dashboard.example.com/roadmap">
+    Native GitHub Actions, Slack bots, and Terraform providers.
+  </Card>
+</Columns>
+
+<Callout kind="tip">
+  Subscribe to release notifications in your account settings at `https://dashboard.example.com/settings/notifications` to never miss an update.
+</Callout>
+
+<Expandable title="Migration Guide for v1.2.0" default-open="false">
+
+Follow these steps to upgrade smoothly:
+
+1. Backup your projects.
+2. Update the CLI: `npm update @alisx/cli`.
+3. Test in staging: `alisx deploy --env=staging`.
+
+For full details, check the [migration docs](https://docs.example.com/migration).
+
+</Expandable>
